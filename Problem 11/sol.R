@@ -1,4 +1,4 @@
-path <- "C:/Users/d91913/Documents/R/Privat/Project Euler/Problem11/grid.txt"
+path <- "grid.txt"
 
 prodn <- function(x, k = 4){
   n <- length(x)
