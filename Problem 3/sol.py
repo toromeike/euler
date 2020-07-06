@@ -16,8 +16,8 @@ def divisors(n):
 
 def prime_factors(n):
     '''
-    Lists all prime factors of an integer n >= 3. Returns an empty list for
-    a prime.
+    Lists all proper prime factors of an integer n >= 3. 
+    Returns an empty list for a prime.
     '''
     divs = divisors(n)
     divs.sort(reverse = True)
@@ -25,9 +25,9 @@ def prime_factors(n):
     if divs == [1]:
         return p_factors
     else:
-        for i, d in enumerate(divs):
+        for i, d in enumerate(divs[:-1]):
             is_prime = True
-            for d1 in divs[:-1*i]:
+            for d1 in divs[(i+1):-1]:
                 if d % d1 == 0:
                     is_prime = False
                     break
@@ -36,3 +36,4 @@ def prime_factors(n):
     return(p_factors)
 
 x = 600851475143
+print(max(prime_factors(x)))
